@@ -21,6 +21,9 @@ public class MyProducer {
             StringSerializer.class);
         properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,
             IntegerSerializer.class);
+        properties.put(ProducerConfig.ACKS_CONFIG, "all");
+        properties.put(ProducerConfig.RETRIES_CONFIG, 20);
+
 
         KafkaProducer<String, Integer> producer =
             new KafkaProducer<>(properties);
